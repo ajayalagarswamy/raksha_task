@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Support Team Dashboard</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="/static/dash.css">
+        <link rel="stylesheet" href="/static/script.js">
+        <link rel="stylesheet" href="/data/data.dashboard.csv">
+    </head>
+
+    <body>
+        <div class="dashboard-container">
+            <h1>Support Team Slide Dashboard</h1>
+            <div class="kpi-card">
+                <h2>Average Response Time</h2>
+                <div class="kpi-value" id="avg-response-time"></div>
+                <canvas id="response-time-chart"></canvas>
+            </div>
+            <div class="kpi-card">
+                <h2>Customer Satisfaction Score (CSAT)</h2>
+                <div class="kpi-value" id="csat-score"></div>
+                <canvas id="csat-chart"></canvas>
+            </div>
+            <div class="kpi-card">
+                <h2>Customer Effort Score (CES)</h2>
+                <div class="kpi-value" id="ces-score"></div>
+                <canvas id="ces-chart"></canvas>
+            </div>
+            <div class="kpi-card">
+                <h2>Net Promoter Score (NPS)</h2>
+                <div class="kpi-value" id="nps-score"></div>
+                <canvas id="nps-chart"></canvas>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+
+    </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>KPI Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/kpi.css">
+    <link rel="stylesheet" href="/static/script1.js">
+    <link rel="stylesheet" href="/data/data.dashboard.csv">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <h1>KPI Overview Q4 2023</h1>
+        <div class="kpi-card">
+            <h2>Revenue Actual VS Target</h2>
+            <div class="kpi-value">
+                <span id="actual-revenue"></span>
+                <span id="target-revenue"></span>
+                <span id="revenue-percentage"></span>
+            </div>
+            <canvas id="revenue-chart"></canvas>
+        </div>
+        <div class="kpi-card">
+            <h2>New Customers Actual VS Target</h2>
+            <div class="kpi-value">
+                <span id="actual-customers"></span>
+                <span id="target-customers"></span>
+                <span id="customers-percentage"></span>
+            </div>
+            <canvas id="customers-chart"></canvas>
+        </div>
+        <div class="kpi-card">
+            <h2>Avg. Revenue per Customer</h2>
+            <div class="kpi-value">
+                <span id="actual-avg-revenue"></span>
+                <span id="target-avg-revenue"></span>
+                <span id="avg-revenue-percentage"></span>
+            </div>
+            <canvas id="avg-revenue-chart"></canvas>
+        </div>
+        <div class="kpi-card">
+            <h2>Customer Acquisition Cost</h2>
+            <div class="kpi-value">
+                <span id="actual-cac"></span>
+                <span id="target-cac"></span>
+                <span id="cac-percentage"></span>
+            </div>
+            <canvas id="cac-chart"></canvas>
+        </div>       
+    </div>
+    
+
+    
