@@ -84,22 +84,22 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/')
-def index():
-    return render_template('dashboard.html')
+# @app.route('/')
+# def index():
+#     return render_template('dashboard.html')
 
-@app.route('/kpi_data')
-def kpi_data():
-    conn = sql.connect('database.db')
-    cursor = conn.cursor()
-    cursor.execute('SELECT metric, value, month FROM kpi')
-    kpis = cursor.fetchall()
-    conn.close()
+# @app.route('/kpi_data')
+# def kpi_data():
+#     conn = sql.connect('database.db')
+#     cursor = conn.cursor()
+#     cursor.execute('SELECT metric, value, month FROM kpi')
+#     kpis = cursor.fetchall()
+#     conn.close()
 
-    kpi_dict = {'Average Response Time': [], 'Customer Satisfaction Score': [], 'Customer Effort Score': [], 'Net Promoter Score': []}
-    for kpi in kpis:
-        kpi_dict[kpi[0]].append({'value': kpi[1], 'month': kpi[2]})
-    return jsonify(kpi_dict)
+#     kpi_dict = {'Average Response Time': [], 'Customer Satisfaction Score': [], 'Customer Effort Score': [], 'Net Promoter Score': []}
+#     for kpi in kpis:
+#         kpi_dict[kpi[0]].append({'value': kpi[1], 'month': kpi[2]})
+#     return jsonify(kpi_dict)
 
 
 if __name__ == '__main__':
